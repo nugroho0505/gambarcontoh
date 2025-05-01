@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Gambar ini aq ambil di appsheet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f0f0;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>gambar ini saya ambil dari appshet</h2>
+<h3>hasil upload dari salah satu aplikasi saya trus aq kirim link nya ke github</h3>
+    <img id="gambar" src="" alt="Gambar Resep">
+  </div>
+
+  <script>
+    // Ambil parameter dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const fileName = urlParams.get('img');
+
+    if (fileName) {
+      // Encode fileName untuk URL
+      const encodedFileName = encodeURIComponent(fileName);
+
+      // Ganti nama tabel sesuai kebutuhan kamu
+      const tableName = "resep";
+
+      // Buat URL AppSheet
+      const imageUrl = `https://www.appsheet.com/template/gettablefileurl?tableName=${tableName}&fileName=${encodedFileName}`;
+
+      // Tampilkan gambar
+      document.getElementById("gambar").src = imageUrl;
+    } else {
+      document.getElementById("gambar").alt = "Parameter 'img' tidak ditemukan di URL.";
+    }
+  </script>
+</body>
+</html>
