@@ -29,7 +29,7 @@
   <div class="container">
     <h2>gambar ini saya ambil dari appshet</h2>
 <h3>hasil upload dari salah satu aplikasi saya trus aq kirim link nya ke github</h3>
-    <img id="gambar" src="" alt="Gambar Resep">
+    <img id="gambar" src="" alt="Gambar RACING">
   </div>
 
   <script>
@@ -42,10 +42,10 @@
       const encodedFileName = encodeURIComponent(fileName);
 
       // Ganti nama tabel sesuai kebutuhan kamu
-      const tableName = "resep";
+      const tableName = "menu";
 
       // Buat URL AppSheet
-      const imageUrl = `https://www.appsheet.com/template/gettablefileurl?tableName=${tableName}&fileName=${encodedFileName}`;
+      const imageUrl = `https://www.appsheet.com/template/gettablefileurl?appname=MASTERB3NGKEL-4571677&tableName=${tableName}&fileName=${encodedFileName}`;
 
       // Tampilkan gambar
       document.getElementById("gambar").src = imageUrl;
