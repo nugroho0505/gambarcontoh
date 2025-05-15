@@ -2,55 +2,62 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Gambar ini aq ambil di appsheet</title>
+  <title>Ucapan Anniversary</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background: #f0f0f0;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-    }
-    .container {
-      max-width: 600px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
       text-align: center;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.3em;
+      max-width: 600px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1em;
+      background-color: #25d366;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #1ebe57;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>gambar ini saya ambil dari appshet</h2>
-<h3>hasil upload dari salah satu aplikasi saya trus aq kirim link nya ke github</h3>
-    <img id="gambar" src="" alt="Gambar RACING">
-  </div>
+  <h1>Selamat Anniversary!</h1>
+  <p>Semoga cinta qta terus tumbuh dan selamanya. Terima kasih telah menjadi inspirasi cinta sejati!</p>
+
+  <button onclick="kirimWhatsApp()">Klik me</button>
 
   <script>
-    // Ambil parameter dari URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const fileName = urlParams.get('img');
-
-    if (fileName) {
-      // Encode fileName untuk URL
-      const encodedFileName = encodeURIComponent(fileName);
-
-      // Ganti nama tabel sesuai kebutuhan kamu
-      const tableName = "menu";
-
-      // Buat URL AppSheet
-      const imageUrl = `https://www.appsheet.com/template/gettablefileurl?appname=MASTERB3NGKEL-4571677&tableName=${tableName}&fileName=${encodedFileName}`;
-
-      // Tampilkan gambar
-      document.getElementById("gambar").src = imageUrl;
-    } else {
-      document.getElementById("gambar").alt = "Parameter 'img' tidak ditemukan di URL.";
+    function kirimWhatsApp() {
+      const nomor = '6281259627874'; // Ganti dengan nomor tujuan jika mau langsung kirim
+      const pesan = encodeURIComponent("Selamat Anniversary! Semoga cinta qt selalu tumbuh dan langgeng selamanya. ❤️ hadiahnya nnti malam ya pa");
+      let url = nomor
+        ? `https://wa.me/${nomor}?text=${pesan}`
+        : `https://wa.me/?text=${pesan}`;
+      window.open(url, '_blank');
     }
   </script>
 </body>
